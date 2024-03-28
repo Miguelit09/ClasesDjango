@@ -1,0 +1,30 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}
+<title>Registrar</title>
+{% endblock title %}
+
+{% block content %}
+<h2>Registremos un curso</h2>
+{% endblock content %}
+
+{% block registrar %}
+
+{% comment %} method post privatiza {% endcomment %}
+{% comment %} method get muestra en la url  {% endcomment %}
+<form action="{% url "registrar_curso_form" %}" method="post"> 
+    {% csrf_token %}
+    <label for="curso_nombre">Nombre del curso:</label>
+    <input type="text" id="curso_nombre" name="curso_nombre">
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" name="descripcion">
+    <label for="materia">Materia:</label>
+    <select name="materia" id="materia">
+        <option value="Programación">Programación</option>
+        <option value="Comunicacion">Comunicacion</option>
+        <option value="Diseño">Diseño</option>
+    </select>
+    <button type="submit">Registrar</button>
+
+</form>
+{% endblock registrar %}

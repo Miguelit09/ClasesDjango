@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% block title %}{% endblock title %}
 </head>
 <body>
     <header>
         {% include "layouts/partials/texto_encabezado.html" %}
         {% include "layouts/partials/menu.html" %}
     </header>
-    <main>
-        {% comment %} {% block content %}{% endblock content %} {% endcomment %}
+    <main class="principal">
+        {% block content %}{% endblock content %}
+        {% block registrar %}{% endblock registrar %}
     </main>
 </body>
 </html>
