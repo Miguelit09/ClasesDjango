@@ -1,0 +1,17 @@
+{% extends "layouts/app.html" %}
+
+{% block content %}
+<h2>Lista de los cursos registrados</h2>
+
+
+<ul>
+    {% for curso in lista_cursos %}
+    <li>
+        ID: {{ curso.id }} -- Nombre del curso: {{ curso.curso_nombre }}
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+{% endblock content %}

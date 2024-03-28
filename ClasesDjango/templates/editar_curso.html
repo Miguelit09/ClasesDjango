@@ -1,0 +1,21 @@
+{% extends "layouts/app.html" %}
+
+{% block content %}
+<form action="{% url "editar_curso" %}" method="post"> 
+    {% csrf_token %}
+    <label for="id_curso">ID curso</label>
+    <input type="number" id="id_curso" name="id_curso">
+    <label for="curso_nombre">Nombre del curso:</label>
+    <input type="text" id="curso_nombre" name="curso_nombre">
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" name="descripcion">
+    <label for="materia">Materia:</label>
+    <select name="materia" id="materia">
+        <option value="Programación">Programación</option>
+        <option value="Comunicacion">Comunicacion</option>
+        <option value="Diseño">Diseño</option>
+    </select>
+    <button type="submit">Editar</button>
+
+</form>
+{% endblock content %}
