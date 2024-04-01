@@ -8,6 +8,7 @@
     {% for curso in lista_cursos %}
     <li>
         ID: {{ curso.id }} -- Nombre del curso: {{ curso.curso_nombre }}
+        <a href="{% url "eliminar_curso" curso.id  %}">Eliminar</a>
     </li>
     {% endfor %}
 </ul>

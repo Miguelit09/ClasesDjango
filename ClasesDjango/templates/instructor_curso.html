@@ -1,0 +1,26 @@
+{% extends "layouts/app.html" %}
+
+{% block content %}
+<h2>Lista de los instructores del curso {{ curso.curso_nombre }}</h2>
+
+
+<ul>
+    {% for instructor in instructores %}
+    <li>
+        ID: {{ instructor.id }} -- Nombre del instructor: {{ instructor.instructor_nombre }}
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>Lista de los cursos del instructor {{ instructor.instructor_nombre }}</h2>
+
+
+<ul>
+    {% for curso in cursos %}
+    <li>
+        ID: {{ curso.id }} -- Nombre del curso: {{ curso.curso_nombre }}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

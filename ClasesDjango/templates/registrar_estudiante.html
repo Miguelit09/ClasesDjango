@@ -1,0 +1,30 @@
+{% block title %}
+<title>Registrar</title>
+{% endblock title %}
+
+{% block content %}
+<h2>Registremos un estudiante</h2>
+{% endblock content %}
+
+{% block registrar %}
+
+{% comment %} method post privatiza {% endcomment %}
+{% comment %} method get muestra en la url  {% endcomment %}
+<form action="{% url "registrar_estudiante" %}" method="post"> 
+    {% csrf_token %}
+    <label for="estudiante_nombre">Nombre del estudiante:</label>
+    <input type="text" id="estudiante_nombre" name="estudiante_nombre">
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad">
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion">
+    <label for="curso">Curso:</label>
+    <select name="curso_id" id="curso_id">
+        {% for curso in cursos %}
+        <option value={{ curso.id }}>{{curso.curso_nombre}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Registrar</button>
+
+</form>
+{% endblock registrar %}

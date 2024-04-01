@@ -1,7 +1,7 @@
 <nav>
     <ul>
         <li>
-            <a href={% url "mostrar_registrar" %}>Registrar</a>
+            <a href={% url "mostrar_registrar" %}>Registrar Curso</a>
         </li>
         <li>
             <a href="{% url 'listar_cursos' %}">Listar</a>
@@ -10,7 +10,7 @@
             <a href="{% url "mostrar_editar" %}">Editar</a>
         </li>
         <li>
-            <a href="#">Eliminar</a>
+            <a href="{% url "mostrar_registrar_estudiante" %}">Registrar estudiante</a>
         </li>
     </ul>
 </nav>
